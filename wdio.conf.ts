@@ -67,13 +67,13 @@ export const config: Options.Testrunner = {
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
     connectionRetryTimeout: 120000,
-    //
+
     // Default request retries count
     connectionRetryCount: 3,
 
     framework: 'mocha',
 
-    reporters: [['allure', {outputDir: 'allure-results'}]],
+    reporters: ['spec', ['allure', {outputDir: 'allure-results'}]],
 
     mochaOpts: {
         ui: 'bdd',

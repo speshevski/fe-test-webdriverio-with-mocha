@@ -1,15 +1,26 @@
 {
-  "name": "my-new-project",
+  "name": "fe-test-webdriverio-with-mocha",
+  "version": "1.0.0",
+  "description": "This repo is an example of a FE test automation framework using WebdriverIO for interacting with the elements on the page and Mocha as a test runner",
   "type": "module",
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speshevski/fe-test-webdriverio-with-mocha.git"
+  },
+  "author": "Stefan Peshevski",
+  "dependencies": {
+    "chromedriver": "^116.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
   "devDependencies": {
     "@wdio/allure-reporter": "^8.16.3",
     "@wdio/cli": "^8.16.4",
     "@wdio/local-runner": "^8.16.4",
     "@wdio/mocha-framework": "^8.16.3",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
-  },
-  "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "@wdio/spec-reporter": "^8.16.3"
   }
 }

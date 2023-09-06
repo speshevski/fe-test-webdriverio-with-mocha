@@ -12,7 +12,7 @@ export const config: Options.Testrunner = {
     },
 
     specs: [
-        // ToDo: define location for spec files here
+        './src/specs/*.ts'
     ],
 
     // Patterns to exclude.
@@ -44,9 +44,9 @@ export const config: Options.Testrunner = {
         'goog:chromeOptions': {
             args: ['--no-sandbox', 'user-agent=...', '--incognito', '--disable-gpu', '--window-size=1920,1080', '--disable-dev-shm-usage'],
         },
-    }, {
+    }, /*{
         browserName: 'firefox'
-    }],
+    }*/],
 
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'info',

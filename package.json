@@ -2,9 +2,8 @@
   "name": "fe-test-webdriverio-with-mocha",
   "version": "1.0.0",
   "description": "This repo is an example of a FE test automation framework using WebdriverIO for interacting with the elements on the page and Mocha as a test runner",
-  "type": "module",
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "test": "wdio run ./wdio.conf.ts"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "moduleResolution": "node",
-        "module": "ESNext",
+        "module": "commonjs",
         "target": "esnext",
         "baseUrl": "./",
         "outDir": "./target/",
@@ -11,14 +11,6 @@
             "expect-webdriverio",
             "@wdio/mocha-framework"
         ],
-        "skipLibCheck": true,
-        "noEmit": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true
     },
     "include": [
         "src"

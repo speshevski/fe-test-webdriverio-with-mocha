@@ -3,6 +3,8 @@
         "moduleResolution": "node",
         "module": "ESNext",
         "target": "esnext",
+        "baseUrl": "./",
+        "outDir": "./target/",
         "types": [
             "node",
             "@wdio/globals/types",
@@ -21,4 +23,7 @@
     "include": [
         "src"
     ],
+    "exclude": [
+        "node_modules"
+    ]
 }

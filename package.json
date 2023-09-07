@@ -11,7 +11,6 @@
   },
   "author": "Stefan Peshevski",
   "dependencies": {
-    "chromedriver": "^116.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
@@ -20,6 +19,8 @@
     "@wdio/cli": "^8.16.4",
     "@wdio/local-runner": "^8.16.4",
     "@wdio/mocha-framework": "^8.16.3",
-    "@wdio/spec-reporter": "^8.16.3"
+    "@wdio/spec-reporter": "^8.16.3",
+    "find-up": "^6.3.0",
+    "selenium-standalone": "^9.1.1"
   }
 }

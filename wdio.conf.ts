@@ -44,9 +44,13 @@ export const config: Options.Testrunner = {
         'goog:chromeOptions': {
             args: ['--no-sandbox', 'user-agent=...', '--incognito', '--disable-gpu', '--window-size=1920,1080', '--disable-dev-shm-usage'],
         },
-    }, /*{
-        browserName: 'firefox'
-    }*/],
+    }, {
+        maxInstances: 5,
+        browserName: 'msedge',
+        'ms:edgeOptions': {
+            args: ['--headless']
+        }
+    }],
 
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'info',

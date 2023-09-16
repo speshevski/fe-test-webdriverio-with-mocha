@@ -1,3 +1,5 @@
+import {Timeout} from "./Timeout";
+
 class BrowserUtils {
     public static waitForURL = async (expectedUrl: string): Promise<void> => {
         await browser.waitUntil(
@@ -11,7 +13,7 @@ class BrowserUtils {
                 timeoutMsg: `Expected URL to be ${expectedUrl} but got ${await browser.getUrl()}`,
             },
         );
-        await browser.pause(1000);
+        await browser.pause(Timeout.BIG);
     };
 }
 

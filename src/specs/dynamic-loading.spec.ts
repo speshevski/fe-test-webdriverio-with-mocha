@@ -1,19 +1,19 @@
 import TheInternetService from "../services/TheInternetService";
 import HomePage from "../pageObjectModel/HomePage";
-import DynamicLoading from "../pageObjectModel/DynamicLoading";
-import DynamicLoadingTwo from "../pageObjectModel/DynamicLoadingTwo";
+import DynamicLoadingPage from "../pageObjectModel/DynamicLoadingPage";
+import DynamicLoadingTwoPage from "../pageObjectModel/DynamicLoadingTwoPage";
 
 describe('Dynamic loading tests', () => {
     let theInternetService: TheInternetService;
     let homePage: HomePage;
-    let dynamicLoading: DynamicLoading;
-    let dynamicLoadingTwo: DynamicLoadingTwo;
+    let dynamicLoading: DynamicLoadingPage;
+    let dynamicLoadingTwo: DynamicLoadingTwoPage;
 
     before(async () => {
         theInternetService = new TheInternetService();
         homePage = new HomePage();
-        dynamicLoading = new DynamicLoading();
-        dynamicLoadingTwo = new DynamicLoadingTwo();
+        dynamicLoading = new DynamicLoadingPage();
+        dynamicLoadingTwo = new DynamicLoadingTwoPage();
     });
 
     it('Text of a dynamically loaded element is as expected', async () => {

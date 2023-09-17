@@ -1,7 +1,7 @@
 import BasePage from "./BasePage";
 import BrowserUtils from "../utils/BrowserUtils";
 
-class DynamicLoading extends BasePage {
+class DynamicLoadingPage extends BasePage {
     public async getElementRenderedAfterTheFactLink(): Promise<WebdriverIO.Element> {
         return $('[href="/dynamic_loading/2"]');
     }
@@ -12,4 +12,4 @@ class DynamicLoading extends BasePage {
     }
 }
 
-export default DynamicLoading;
+export default DynamicLoadingPage;

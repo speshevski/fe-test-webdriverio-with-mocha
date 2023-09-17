@@ -1,6 +1,6 @@
 import BasePage from "./BasePage";
 
-class DynamicLoadingTwo extends BasePage {
+class DynamicLoadingTwoPage extends BasePage {
     public async getStartButton(): Promise<WebdriverIO.Element> {
         return $('[id="start"] button');
     }
@@ -22,4 +22,4 @@ class DynamicLoadingTwo extends BasePage {
     }
 }
 
-export default DynamicLoadingTwo;
+export default DynamicLoadingTwoPage;

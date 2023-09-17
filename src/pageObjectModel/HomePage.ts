@@ -28,6 +28,15 @@ class HomePage extends BasePage {
         await this.clickOnElement(await this.getKeyPressesLink());
         await BrowserUtils.waitForURL('https://the-internet.herokuapp.com/key_presses');
     }
+
+    public async getHorizontalSliderLink(): Promise<WebdriverIO.Element> {
+        return $('[href="/horizontal_slider"]');
+    }
+
+    public async clickOnHorizontalSliderLink(): Promise<void> {
+        await this.clickOnElement(await this.getHorizontalSliderLink());
+        await BrowserUtils.waitForURL('https://the-internet.herokuapp.com/horizontal_slider');
+    }
 }
 
 export default HomePage;

@@ -37,6 +37,15 @@ class HomePage extends BasePage {
         await this.clickOnElement(await this.getHorizontalSliderLink());
         await BrowserUtils.waitForURL('https://the-internet.herokuapp.com/horizontal_slider');
     }
+
+    public async getFileUpdateLink(): Promise<WebdriverIO.Element> {
+        return $('[href="/upload"]');
+    }
+
+    public async clickOnFileUpdateLink(): Promise<void> {
+        await this.clickOnElement(await this.getFileUpdateLink());
+        await BrowserUtils.waitForURL('https://the-internet.herokuapp.com/upload');
+    }
 }
 
 export default HomePage;

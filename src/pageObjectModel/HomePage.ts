@@ -19,6 +19,15 @@ class HomePage extends BasePage {
         await this.clickOnElement(await this.getDynamicLoadingLink());
         await BrowserUtils.waitForURL('https://the-internet.herokuapp.com/dynamic_loading');
     }
+
+    public async getKeyPressesLink(): Promise<WebdriverIO.Element> {
+        return $('[href="/key_presses"]');
+    }
+
+    public async clickOnKeyPressesLink(): Promise<void> {
+        await this.clickOnElement(await this.getKeyPressesLink());
+        await BrowserUtils.waitForURL('https://the-internet.herokuapp.com/key_presses');
+    }
 }
 
 export default HomePage;

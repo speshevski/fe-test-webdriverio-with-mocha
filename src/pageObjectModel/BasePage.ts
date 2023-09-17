@@ -29,6 +29,11 @@ abstract class BasePage {
     protected async selectDropdownByText(selector: WebdriverIO.Element, text: string): Promise<void> {
         await selector.selectByVisibleText(text);
     }
+
+    protected async clearInputAndType(selector: WebdriverIO.Element, text: string): Promise<void> {
+        await selector.clearValue();
+        await selector.setValue(text);
+    }
 }
 
 export default BasePage;

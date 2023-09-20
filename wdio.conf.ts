@@ -42,7 +42,7 @@ export const config: Options.Testrunner = {
         browserName: 'chrome',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
-            args: ['--no-sandbox', '--incognito'],
+            args: ['--no-sandbox', '--incognito', '--headless'],
         },
     }, /*{
         maxInstances: 5,

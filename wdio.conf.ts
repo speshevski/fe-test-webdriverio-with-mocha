@@ -74,7 +74,15 @@ export const config: Options.Testrunner = {
 
     framework: 'mocha',
 
-    reporters: ['spec', ['allure', {outputDir: 'allure-results'}]],
+    reporters: [['spec', {
+        symbols: {
+            passed: '✔',
+            failed: '✘',
+            pending: '◯'
+        }
+    }], ['allure', {
+        outputDir: 'allure-results'
+    }]],
 
     mochaOpts: {
         ui: 'bdd',

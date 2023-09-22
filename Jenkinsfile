@@ -20,6 +20,9 @@ pipeline {
             steps {
                 // Run your tests
                 bat 'npm run test'
+
+                // Generate Allure report
+                bat 'allure generate ./allure-results -o ./allure-report'
             }
         }
     }
@@ -32,6 +35,14 @@ pipeline {
         failure {
             // This block is executed if the pipeline fails
             echo 'Build or tests failed!'
+        }
+        always {
+            // Publish Allure report
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'allure-report']]
+            ])
         }
     }
 }

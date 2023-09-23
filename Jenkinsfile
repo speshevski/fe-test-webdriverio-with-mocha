@@ -22,7 +22,7 @@ pipeline {
                 bat 'npm run test'
 
                 // Generate Allure report
-                bat 'allure generate ./allure-results -o ./allure-report'
+                bat 'allure generate ./allure-results -o ./allure-report --clean'
             }
         }
     }

@@ -17,6 +17,6 @@ describe('Horizontal scroll tests', () => {
         await theInternetService.navigateToDefaultAppPage();
         await homePage.clickOnHorizontalSliderLink();
         await horizontalSlidePage.moveSlider(5);
-        await expect(await horizontalSlidePage.getResultText()).toEqual('2.7');
+        await expect(await horizontalSlidePage.getResultText()).toEqual('2.5');
     });
 });

@@ -18,6 +18,6 @@ describe('Dropdown tests', () => {
         await theInternetService.navigateToDefaultAppPage();
         await homePage.clickOnDropdownLink();
         await dropdownPage.selectDropdownListByText(DROPDOWN_OPTION);
-        await expect(await dropdownPage.getSelectedDropdownListOptionText()).toEqual('Option 23');
+        await expect(await dropdownPage.getSelectedDropdownListOptionText()).toEqual(DROPDOWN_OPTION);
     });
 });

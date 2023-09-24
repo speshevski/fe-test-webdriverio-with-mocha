@@ -88,8 +88,8 @@ export const config: Options.Testrunner = {
         timeout: 60000
     },
 
-    afterTest: async function (test, context, {error, result, duration, passed, retries}) {
-        if (!passed) {
+    afterTest: async function (test, context, {error}) {
+        if (error) {
             await browser.takeScreenshot();
         }
     }

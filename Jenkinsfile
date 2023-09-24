@@ -20,9 +20,6 @@ pipeline {
             steps {
                 // Run your tests
                 bat 'npm run test'
-
-                // Generate Allure report
-                bat 'allure generate ./allure-results -o ./allure-report --clean'
             }
         }
     }

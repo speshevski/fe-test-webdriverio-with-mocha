@@ -6,7 +6,6 @@ pipeline {
             choices: ['regression', 'suite1', 'suite2'], // Add more suites as needed
             description: 'Select the test suite to run',
             name: 'TEST_SUITE',
-            defaultValue: 'regression'
         )
     }
 

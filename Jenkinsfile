@@ -50,21 +50,11 @@ pipeline {
             echo 'Build or tests failed!'
         }
         always {
-            script {
-                def currentBuildNumber = currentBuild.number
-                def allureResultsDir = "allure-results-${currentBuildNumber}"
-
-                // Clean up the previous Allure results (if any) to ensure only current results are saved
-                deleteDir(path: allureResultsDir)
-
-                // Generate Allure report and save it to the unique results directory
-                bat "allure generate allure-results -o ${allureResultsDir}"
-                allure([
-                    includeProperties: false,
-                    jdk: '',
-                    results: [[path: allureResultsDir]]
-                ])
-            }
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'allure-results']]
+            ])
         }
     }
 }

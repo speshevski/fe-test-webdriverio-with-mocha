@@ -1,25 +1,24 @@
 pipeline {
     agent any
 
-     parameters {
-            choice(
-                choices: ['regression', 'suite1', 'suite2'],
-                description: 'Select the test suite to run',
-                name: 'TEST_SUITE'
-            )
-        }
+    parameters {
+        choice(
+            choices: ['regression', 'suite1', 'suite2'], // Add more suites as needed
+            description: 'Select the test suite to run',
+            name: 'TEST_SUITE',
+            defaultValue: 'regression'
+        )
+    }
 
     stages {
         stage('Checkout') {
             steps {
-                // Check out your code from your repository
                 checkout scm
             }
         }
 
         stage('Build') {
             steps {
-                // Install Node.js and npm (if not already installed)
                 bat 'npm install'
             }
         }
@@ -30,10 +29,9 @@ pipeline {
                     def selectedSuite = params.TEST_SUITE
 
                     if (selectedSuite == 'regression') {
-                        // Run regression
+                        // Run the default 'npm run test' script (regression)
                         bat 'npm run test'
-                    }
-                    if (selectedSuite == 'suite1') {
+                    } else if (selectedSuite == 'suite1') {
                         // Run suite1
                         bat 'npm run test:suite1'
                     } else if (selectedSuite == 'suite2') {
@@ -47,20 +45,27 @@ pipeline {
 
     post {
         success {
-            // This block is executed if the pipeline succeeds
             echo 'Build and tests passed!'
         }
         failure {
-            // This block is executed if the pipeline fails
             echo 'Build or tests failed!'
         }
         always {
-            // Publish Allure report
-            allure([
-                includeProperties: false,
-                jdk: '',
-                results: [[path: 'allure-results']]
-            ])
+            script {
+                def currentBuildNumber = currentBuild.number
+                def allureResultsDir = "allure-results-${currentBuildNumber}"
+
+                // Clean up the previous Allure results (if any) to ensure only current results are saved
+                deleteDir(path: allureResultsDir)
+
+                // Generate Allure report and save it to the unique results directory
+                bat "allure generate allure-results -o ${allureResultsDir}"
+                allure([
+                    includeProperties: false,
+                    jdk: '',
+                    results: [[path: allureResultsDir]]
+                ])
+            }
         }
     }
 }

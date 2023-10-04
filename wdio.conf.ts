@@ -15,6 +15,17 @@ export const config: Options.Testrunner = {
         './src/specs/*.ts'
     ],
 
+    suites: {
+        suite1: [
+            './src/specs/dropdown.spec.ts',
+            './src/specs/dynamic-loading.spec.ts',
+        ],
+        suite2: [
+            './src/specs/file-upload.spec.ts',
+            './src/specs/horizontal-slider.spec.ts',
+        ],
+    },
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'

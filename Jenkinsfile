@@ -27,6 +27,9 @@ pipeline {
                 script {
                     def selectedSuite = params.TEST_SUITE
 
+                    // Clean the allure-results folder before each test run
+                    bat 'del /q allure-results\\*.*'
+
                     if (selectedSuite == 'regression') {
                         // Run the default 'npm run test' script (regression)
                         bat 'npm run test'
